@@ -1,0 +1,58 @@
+<html>
+<head>
+<!-- Start JQuery Mobile -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+<link rel="stylesheet" href="css/style.css"/>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<!-- End JQuery Mobile -->
+<!-- Start GreenSock -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
+<!-- <script language="text/JavaScript" src="js/script.js"></script> -->
+
+<script>
+//console.log("hello");
+
+function calculateBmi() {
+	
+	//var weight = document.bmiForm.weight.value
+	let = weight = $("#")
+	
+	var height = document.bmiForm.height.value
+	if(weight > 0 && height > 0){	
+		var finalBmi = weight/(height/100*height/100)
+			document.bmiForm.bmi.value = finalBmi
+		if(finalBmi < 18.5){
+			document.bmiForm.meaning.value = "That you are too thin."
+		}
+		if(finalBmi > 18.5 && finalBmi < 25){
+			document.bmiForm.meaning.value = "That you are healthy."
+		}
+		if(finalBmi > 25){
+			document.bmiForm.meaning.value = "That you have overweight."
+		}
+	}else{
+		alert("Please Fill in everything correctly")
+	}
+}
+</script>
+</head>
+<body>
+		<div id="logo-container">
+<img class="logo" src="img/cartman.svg" width="100%"/>
+		</div>
+
+<form name="bmiForm">
+Your Weight(kg): <input type="text" name="weight" id="weight" size="10"><br />
+Your Height(cm): <input type="text" name="height" size="10"><br />
+<input type="button" value="Calculate BMI" onClick="calculateBmi()"><br />
+Your BMI: <input type="text" name="bmi" size="10"><br />
+This Means: <input type="text" name="meaning" size="25"><br />
+<input type="reset" value="Reset" />
+</form>
+
+<script src="js/gsap.min.js"></script>
+<script src="js/logo-animation.js"></script>
+</body>
+</html>
